@@ -19,7 +19,7 @@ services:
 
       CF_API_KEY: ${CF_API_KEY}
       CF_SLUG: "dark-hours"
-      CF_FILE_ID: "6973150"
+      CF_FILE_ID: ${CF_FILE_ID}
     networks:
       - proxy
     ports:
