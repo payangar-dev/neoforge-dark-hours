@@ -3,7 +3,7 @@ services:
     container_name: neoforge-1.21.1-dark-hours
     image: itzg/minecraft-server
     environment:
-      TYPE: MODRINTH
+      TYPE: AUTO_CURSEFORGE
       VERSION: "1.21.1"
       EULA: true
 
@@ -17,7 +17,9 @@ services:
       DIFFICULTY: "hard"
       MOTD: "Le serveur de tes rêves"
 
-      MODRINTH_MODPACK: ${MODRINTH_MODPACK}
+      CF_API_KEY: ${CF_API_KEY}
+      CF_SLUG: "dark-hours"
+      CF_FILE_ID: "6973150"
     networks:
       - proxy
     ports:
@@ -26,7 +28,6 @@ services:
       - "8080:8080"
     volumes:
       - ./data:/data
-      - ./server.mrpack:/server.mrpack
     stdin_open: true
     tty: true
     restart: unless-stopped
